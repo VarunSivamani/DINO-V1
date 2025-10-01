@@ -1,0 +1,29 @@
+# Model
+backbone_model: vit_small
+# please add the img_size for pretrained models (resnet50)
+img_size: null
+patch_size: 8
+optimizer: adamw
+# you can ignore this argument if you use pretrained models
+out_dim: 384
+
+teacher_temp_start: 0.04
+teacher_temp_end: 0.07
+teacher_momentum_start: 0.996
+teacher_momentum_end: 1
+student_temp: 0.1
+center_momentum: 0.9
+
+# Training
+lr_scheduler_type: plateau
+warmup_epochs: 10
+epochs: 100
+batch_size: 128
+start_lr: 5e-4
+min_lr: 1e-6
+weight_decay: 0.04
+weight_decay_end: 0.4
+lr_step_size: 10
+
+# Misc
+seed: 42
